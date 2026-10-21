@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IdleMulti - todas as suas contas de jogos idle numa janela só</title>
+<meta name="description" content="IdleMulti roda várias contas do mesmo jogo idle lado a lado, cada uma com login separado, e economiza memória e CPU. Grátis para 2 contas.">
+<meta name="theme-color" content="#08080b">
+<meta property="og:title" content="IdleMulti - todas as suas contas numa janela só">
+<meta property="og:description" content="Várias contas de jogos idle lado a lado, cada uma com login separado. Grátis para 2 contas.">
+<meta property="og:image" content="assets/logo.png">
+<link rel="icon" href="assets/logo.png" type="image/png">
+<link rel="preload" href="assets/fonts/PixelifySans.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#topo" aria-label="IdleMulti, início">
+      <img src="assets/logo.png" alt="" width="32" height="32">
+      <span>IdleMulti</span>
+    </a>
+    <nav aria-label="Seções">
+      <a href="#demo">Demonstração</a>
+      <a href="#beneficios">Benefícios</a>
+      <a href="#planos">Planos</a>
+      <a href="#faq">Perguntas</a>
+    </nav>
+    <a class="btn btn-solid js-download" href="#planos">Baixar</a>
+  </div>
+</header>
+
+<main id="topo">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-in">
+      <div class="hero-copy">
+        <h1 class="pixel">
+          Todas as suas contas.
+          <span class="glow">Uma janela só<i class="cursor" aria-hidden="true"></i></span>
+        </h1>
+        <p class="lead">O IdleMulti abre várias contas do mesmo jogo idle lado a lado. Cada conta tem o próprio login, e você controla quanta memória e CPU cada uma pode gastar.</p>
+        <div class="cta-row">
+          <a class="btn btn-solid btn-lg js-download" href="#planos"><span class="js-download-label">Baixar para Windows</span></a>
+          <a class="btn btn-ghost btn-lg" href="#planos">Ver planos</a>
+        </div>
+        <p class="note js-download-note">Windows 10 e 11. Grátis para 2 contas, sem cartão.</p>
+      </div>
+
+      <aside class="card accounts" aria-label="Exemplo de contas abertas no IdleMulti">
+        <p class="card-title">Contas abertas</p>
+        <ul class="rows">
+          <li><span class="chip" style="--c:#ff6b6b">P</span><span class="r-name">Principal</span><span class="r-meta">Rodando há 3 h 12 min</span><span class="r-val">312 MB</span></li>
+          <li><span class="chip" style="--c:#4dabf7">S</span><span class="r-name">Segunda</span><span class="r-meta">Rodando há 3 h 12 min</span><span class="r-val">287 MB</span></li>
+          <li><span class="chip" style="--c:#b197fc">T</span><span class="r-name">Terceira</span><span class="r-meta">Rodando há 41 min</span><span class="r-val">301 MB</span></li>
+          <li class="is-off"><span class="chip" style="--c:#ffd43b">Q</span><span class="r-name">Quarta</span><span class="r-meta">Suspensa, login salvo</span><span class="r-val">0 MB</span></li>
+        </ul>
+        <p class="card-foot">Exemplo ilustrativo. Valores reais variam por jogo.</p>
+      </aside>
+    </div>
+    <div class="band" aria-hidden="true"></div>
+  </section>
+
+  <!-- DEMONSTRAÇÃO -->
+  <section class="sec" id="demo">
+    <div class="wrap">
+      <h2 class="pixel">Veja como fica</h2>
+      <p class="sec-lead">Um painel por conta, todos na mesma tela. Quando uma conta não precisa rodar, você suspende e ela deixa de gastar memória, sem perder o login.</p>
+
+      <figure class="window" aria-label="Ilustração da janela do IdleMulti com quatro contas">
+        <div class="win-bar"><span></span><span></span><span></span></div>
+        <div class="win-body">
+          <div class="win-side">
+            <div class="side-brand"><img src="assets/logo.png" alt="" width="22" height="22"> IdleMulti</div>
+            <div class="side-item on"><i style="--c:#ff6b6b"></i>Principal</div>
+            <div class="side-item"><i style="--c:#4dabf7"></i>Segunda</div>
+            <div class="side-item"><i style="--c:#b197fc"></i>Terceira</div>
+            <div class="side-item dim"><i style="--c:#ffd43b"></i>Quarta</div>
+          </div>
+          <div class="win-grid">
+            <div class="pane" style="--c:#ff6b6b"><b>Principal</b><span>Rodando</span><em></em><em></em></div>
+            <div class="pane" style="--c:#4dabf7"><b>Segunda</b><span>Rodando</span><em></em><em></em></div>
+            <div class="pane" style="--c:#b197fc"><b>Terceira</b><span>Rodando</span><em></em><em></em></div>
+            <div class="pane off" style="--c:#ffd43b"><b>Quarta</b><span>Suspensa</span><p>Não usa memória nem CPU. O login continua salvo.</p></div>
+          </div>
+        </div>
+        <figcaption>Ilustração da tela principal. Cada painel é um jogo aberto com login próprio.</figcaption>
+      </figure>
+
+      <div class="shots">
+        <figure>
+          <img src="assets/app-plano.png" alt="Captura do IdleMulti mostrando a guia Plano com os planos Free, Pro e Max" width="600" height="734" loading="lazy">
+          <figcaption>Os planos, direto nas configurações do app.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/app-limite.png" alt="Captura do aviso de limite de contas do IdleMulti" width="440" height="165" loading="lazy">
+          <figcaption>Ao chegar no limite do seu plano, o app avisa e mostra o próximo passo.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFÍCIOS -->
+  <section class="sec" id="beneficios">
+    <div class="wrap">
+      <h2 class="pixel">O que você ganha</h2>
+      <div class="grid3">
+        <article class="card feat">
+          <h3 class="pixel">Contas lado a lado</h3>
+          <p>Veja todas na grade ou abra uma em foco. Atalhos <kbd>Ctrl</kbd> + <kbd>1</kbd> a <kbd>9</kbd> trocam de conta na hora.</p>
+        </article>
+        <article class="card feat">
+          <h3 class="pixel">Um login por conta</h3>
+          <p>Cada conta guarda os próprios cookies, separados das outras. Você entra uma vez e o login fica salvo neste computador.</p>
+        </article>
+        <article class="card feat">
+          <h3 class="pixel">Leve para o PC</h3>
+          <p>Defina limite de memória e de CPU por conta, suspenda as que não está usando e libere memória com um clique.</p>
+        </article>
+        <article class="card feat">
+          <h3 class="pixel">Sem guardar senhas</h3>
+          <p>O app não vê nem guarda a senha do seu jogo. Câmera, microfone, localização e downloads ficam bloqueados nas páginas dos jogos.</p>
+        </article>
+        <article class="card feat">
+          <h3 class="pixel">Menos anúncio e rastreio</h3>
+          <p>Bloqueia scripts de anúncios e rastreadores comuns que os jogos carregam, o que poupa tráfego e memória.</p>
+        </article>
+        <article class="card feat">
+          <h3 class="pixel">Atualiza pelo app</h3>
+          <p>Quando sai uma versão nova, o IdleMulti avisa e você atualiza com um clique, sem baixar o instalador de novo.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROVA SOCIAL: só fatos verificáveis do produto. Quando houver depoimentos reais, remova o atributo hidden do bloco abaixo. -->
+  <section class="sec proof" aria-label="O IdleMulti em números">
+    <div class="wrap">
+      <dl class="facts">
+        <div><dt class="pixel">2</dt><dd>contas grátis, sem cartão</dd></div>
+        <div><dt class="pixel">30</dt><dd>contas ao mesmo tempo no plano Max</dd></div>
+        <div><dt class="pixel">0</dt><dd>senhas de jogo guardadas pelo app</dd></div>
+        <div><dt class="pixel">1</dt><dd>janela para tudo</dd></div>
+      </dl>
+      <div class="quotes" hidden>
+        <!-- Exemplo de depoimento real, para usar no futuro:
+        <blockquote><p>“Texto do depoimento.”</p><footer>Nome, jogo que joga</footer></blockquote> -->
+      </div>
+    </div>
+  </section>
+
+  <!-- PLANOS -->
+  <section class="sec" id="planos">
+    <div class="wrap">
+      <h2 class="pixel">Escolha quantas contas</h2>
+      <p class="sec-lead">Comece grátis e assine dentro do app quando precisar de mais contas. O pagamento é por Pix e a assinatura é mensal.</p>
+      <div class="grid3 plans">
+        <article class="card plan">
+          <h3 class="pixel">Free</h3>
+          <p class="price">Grátis</p>
+          <ul class="ticks">
+            <li>2 contas ao mesmo tempo</li>
+            <li>Login salvo por conta</li>
+            <li>Sem cartão, só e-mail</li>
+          </ul>
+          <a class="btn btn-ghost js-download" href="#planos"><span class="js-download-label">Baixar</span></a>
+        </article>
+        <article class="card plan hot">
+          <h3 class="pixel">Pro</h3>
+          <p class="price">R$ 9,90<small>/mês</small></p>
+          <ul class="ticks">
+            <li>Até 6 contas ao mesmo tempo</li>
+            <li>Tudo do Free</li>
+            <li>Ideal para um time de contas</li>
+          </ul>
+          <a class="btn btn-solid js-download" href="#planos"><span class="js-download-label">Baixar</span></a>
+        </article>
+        <article class="card plan">
+          <h3 class="pixel">Max</h3>
+          <p class="price">R$ 19,90<small>/mês</small></p>
+          <ul class="ticks">
+            <li>Até 30 contas ao mesmo tempo</li>
+            <li>Tudo do Pro</li>
+            <li>Para quem joga com tudo</li>
+          </ul>
+          <a class="btn btn-ghost js-download" href="#planos"><span class="js-download-label">Baixar</span></a>
+        </article>
+      </div>
+      <p class="fine">A assinatura é feita dentro do app, depois de entrar com o seu e-mail. Os planos pagos usam uma conta por vez em cada computador.</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="sec" id="faq">
+    <div class="wrap narrow">
+      <h2 class="pixel">Perguntas comuns</h2>
+      <details>
+        <summary>Funciona com qualquer jogo idle?</summary>
+        <p>Funciona com jogos que rodam no navegador. Você cola o endereço do jogo nas configurações e todas as contas abrem nele.</p>
+      </details>
+      <details>
+        <summary>Preciso criar uma conta para usar?</summary>
+        <p>Sem login você usa 1 conta. Entrando com seu e-mail (você recebe um código, sem senha) liberam-se as 2 contas grátis.</p>
+      </details>
+      <details>
+        <summary>Posso usar a assinatura em mais de um computador?</summary>
+        <p>Pode instalar em quantos quiser e entrar com o mesmo e-mail, mas os planos pagos funcionam em um computador por vez. Ao entrar em outro, o anterior volta para o limite do Free, sem perder nenhum login.</p>
+      </details>
+      <details>
+        <summary>E se eu cancelar ou o plano acabar?</summary>
+        <p>A assinatura vale até o fim do período pago. Depois, as contas acima do limite ficam suspensas e travadas. Nada é apagado e o login de cada uma continua salvo.</p>
+      </details>
+      <details>
+        <summary>O Windows mostrou um aviso ao instalar. É normal?</summary>
+        <p>O instalador ainda não tem assinatura digital paga, então o Windows pode pedir confirmação na primeira vez. Escolha “Mais informações” e depois “Executar assim mesmo”.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="final">
+    <div class="wrap final-in">
+      <h2 class="pixel glow">Abra suas contas agora</h2>
+      <p class="sec-lead">Instale, cole o endereço do jogo e adicione as contas. Leva menos de um minuto.</p>
+      <a class="btn btn-solid btn-lg js-download" href="#planos"><span class="js-download-label">Baixar para Windows</span></a>
+    </div>
+    <div class="band" aria-hidden="true"></div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <span>© IdleMulti</span>
+    <a href="mailto:idlemultioficial@gmail.com">idlemultioficial@gmail.com</a>
+    <span class="fine">O IdleMulti é independente e não tem ligação com nenhum dos jogos que você abre nele.</span>
+  </div>
+</footer>
+
+<script src="main.js" defer></script>
+</body>
+</html>
