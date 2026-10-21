@@ -97,6 +97,12 @@ kbd { padding: 1px 6px; font: inherit; font-size: .85em; border: 1px solid var(-
 .card-title { color: var(--faint); font-size: 13px; margin-bottom: 14px; }
 .card-foot { margin-top: 14px; color: var(--faint); font-size: 12px; }
 
+/* Cores das contas de exemplo (classes em vez de style inline, por causa da CSP) */
+.c-red { --c: #ff6b6b; }
+.c-blue { --c: #4dabf7; }
+.c-violet { --c: #b197fc; }
+.c-yellow { --c: #ffd43b; }
+
 /* Lista de contas (hero) */
 .rows { list-style: none; padding: 0; display: grid; gap: 8px; }
 .rows li {
