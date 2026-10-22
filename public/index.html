@@ -67,38 +67,38 @@
   <section class="sec" id="demo">
     <div class="wrap">
       <h2 class="pixel">Veja como fica</h2>
-      <p class="sec-lead">Um painel por conta, todos na mesma tela. Quando uma conta não precisa rodar, você suspende e ela deixa de gastar memória, sem perder o login.</p>
+      <p class="sec-lead">Cada jogo ganha uma pasta, e dentro dela ficam todas as contas dele, lado a lado e cada uma com o próprio login. Arraste para reordenar e suspenda as que não precisa: a memória volta na hora, sem perder o login.</p>
 
-      <figure class="window" aria-label="Ilustração da janela do IdleMulti com quatro contas">
+      <figure class="window" aria-label="Ilustração da janela do IdleMulti com três pastas de jogos e quatro contas abertas na pasta ativa">
         <div class="win-bar"><span></span><span></span><span></span></div>
         <div class="win-body">
           <div class="win-side">
             <div class="side-brand"><img src="assets/logo.png" alt="" width="22" height="22"> IdleMulti</div>
-            <div class="side-item on"><i class="c-red"></i>Principal</div>
-            <div class="side-item"><i class="c-blue"></i>Segunda</div>
-            <div class="side-item"><i class="c-violet"></i>Terceira</div>
-            <div class="side-item dim"><i class="c-yellow"></i>Quarta</div>
+            <div class="folder on c-violet">
+              <div class="folder-head"><span class="f-badge"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2.5h8a2 2 0 0 1 2 2V17a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></span><b>Jogo Idle A</b><em>4</em></div>
+              <div class="folder-accs">
+                <div class="side-item on c-red"><span class="av"><img src="assets/avatars/pixel-01.svg" alt="" width="24" height="24"></span>Principal</div>
+                <div class="side-item c-blue"><span class="av"><img src="assets/avatars/pixel-03.svg" alt="" width="24" height="24"></span>Segunda</div>
+                <div class="side-item c-violet"><span class="av"><img src="assets/avatars/pixel-05.svg" alt="" width="24" height="24"></span>Terceira</div>
+                <div class="side-item dim c-yellow"><span class="av"><img src="assets/avatars/pixel-07.svg" alt="" width="24" height="24"></span>Quarta</div>
+              </div>
+            </div>
+            <div class="folder c-blue"><div class="folder-head"><span class="f-badge"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2.5h8a2 2 0 0 1 2 2V17a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></span><b>Fazenda</b><em>2</em></div></div>
+            <div class="folder c-yellow"><div class="folder-head"><span class="f-badge"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2.5h8a2 2 0 0 1 2 2V17a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></span><b>Aventura</b><em>1</em></div></div>
+            <div class="side-new">+ Nova pasta</div>
           </div>
-          <div class="win-grid">
-            <div class="pane c-red"><b>Principal</b><span>Rodando</span><em></em><em></em></div>
-            <div class="pane c-blue"><b>Segunda</b><span>Rodando</span><em></em><em></em></div>
-            <div class="pane c-violet"><b>Terceira</b><span>Rodando</span><em></em><em></em></div>
-            <div class="pane off c-yellow"><b>Quarta</b><span>Suspensa</span><p>Não usa memória nem CPU. O login continua salvo.</p></div>
+          <div class="win-main">
+            <div class="win-top"><b>Jogo Idle A</b><span>3 contas rodando · 900 MB</span></div>
+            <div class="win-grid">
+              <div class="pane c-red"><div class="pane-head"><span class="av"><img src="assets/avatars/pixel-01.svg" alt="" width="24" height="24"></span><b>Principal</b><span>Rodando</span></div><em></em><em></em></div>
+              <div class="pane c-blue"><div class="pane-head"><span class="av"><img src="assets/avatars/pixel-03.svg" alt="" width="24" height="24"></span><b>Segunda</b><span>Rodando</span></div><em></em><em></em></div>
+              <div class="pane c-violet"><div class="pane-head"><span class="av"><img src="assets/avatars/pixel-05.svg" alt="" width="24" height="24"></span><b>Terceira</b><span>Rodando</span></div><em></em><em></em></div>
+              <div class="pane off c-yellow"><div class="pane-head"><span class="av"><img src="assets/avatars/pixel-07.svg" alt="" width="24" height="24"></span><b>Quarta</b><span>Suspensa</span></div><p>Não usa memória nem CPU. O login continua salvo.</p></div>
+            </div>
           </div>
         </div>
-        <figcaption>Ilustração da tela principal. Cada painel é um jogo aberto com login próprio.</figcaption>
+        <figcaption>Ilustração da tela principal. Cada pasta é um jogo, e cada painel é uma conta com login próprio.</figcaption>
       </figure>
-
-      <div class="shots">
-        <figure>
-          <img src="assets/app-plano.png" alt="Captura do IdleMulti mostrando a guia Plano com os planos Free, Pro e Max" width="600" height="734" loading="lazy">
-          <figcaption>Os planos, direto nas configurações do app.</figcaption>
-        </figure>
-        <figure>
-          <img src="assets/app-limite.png" alt="Captura do aviso de limite de contas do IdleMulti" width="440" height="165" loading="lazy">
-          <figcaption>Ao chegar no limite do seu plano, o app avisa e mostra o próximo passo.</figcaption>
-        </figure>
-      </div>
     </div>
   </section>
 
@@ -108,8 +108,8 @@
       <h2 class="pixel">O que você ganha</h2>
       <div class="grid3">
         <article class="card feat">
-          <h3 class="pixel">Contas lado a lado</h3>
-          <p>Veja todas na grade ou abra uma em foco. Atalhos <kbd>Ctrl</kbd> + <kbd>1</kbd> a <kbd>9</kbd> trocam de conta na hora.</p>
+          <h3 class="pixel">Uma pasta por jogo</h3>
+          <p>Cada jogo tem a sua pasta, com as contas dele lado a lado. Arraste para reordenar e use <kbd>Ctrl</kbd> + <kbd>1</kbd> a <kbd>9</kbd> para trocar de conta na hora.</p>
         </article>
         <article class="card feat">
           <h3 class="pixel">Um login por conta</h3>
@@ -198,7 +198,7 @@
       <h2 class="pixel">Perguntas comuns</h2>
       <details>
         <summary>Funciona com qualquer jogo idle?</summary>
-        <p>Funciona com jogos que rodam no navegador. Você cola o endereço do jogo nas configurações e todas as contas abrem nele.</p>
+        <p>Funciona com jogos que rodam no navegador. Cada jogo ganha a sua pasta: você cola o endereço dele e todas as contas daquela pasta abrem nele.</p>
       </details>
       <details>
         <summary>Preciso criar uma conta para usar?</summary>
@@ -241,5 +241,6 @@
 </footer>
 
 <script src="main.js" defer></script>
+<script type="module" src="world/gate.js"></script>
 </body>
 </html>
