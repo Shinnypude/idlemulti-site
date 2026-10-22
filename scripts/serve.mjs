@@ -1,5 +1,5 @@
 // Servidor local mínimo (sem dependências) para ver o site como no ar:
-// serve public/ na porta 8123 e aplica os cabeçalhos de public/_headers (CSP inclusive).
+// serve public/ na porta 8123 e aplica os cabeçalhos do vercel.json (CSP inclusive).
 // Uso: node scripts/serve.mjs   (PORT=9000 node scripts/serve.mjs para outra porta)
 import { createServer } from 'node:http';
 import { readFile, stat } from 'node:fs/promises';
@@ -24,35 +24,16 @@ const TYPES = {
   '.txt': 'text/plain; charset=utf-8',
 };
 
-// Formato do _headers da Cloudflare: linha sem recuo = padrão de URL; linhas recuadas = "Nome: valor".
-function parseHeaders(text) {
-  const rules = [];
-  let cur = null;
-  for (const raw of text.split(/\r?\n/)) {
-    if (!raw.trim() || raw.trim().startsWith('#')) continue;
-    if (!/^\s/.test(raw)) {
-      cur = { pattern: raw.trim(), headers: [] };
-      rules.push(cur);
-    } else if (cur) {
-      const i = raw.indexOf(':');
-      if (i > 0) cur.headers.push([raw.slice(0, i).trim(), raw.slice(i + 1).trim()]);
-    }
-  }
-  return rules;
-}
-
-function matches(pattern, path) {
-  const esc = (s) => s.replace(/[.+?^${}()|[\]\\]/g, '\\$&');
-  const re = new RegExp('^' + pattern.split('*').map(esc).join('.*') + '$');
-  return re.test(path);
-}
-
-const rules = parseHeaders(readFileSync(join(ROOT, '_headers'), 'utf8'));
+// Cabeçalhos: a mesma fonte da Vercel (vercel.json, regra "/(.*)"), para o local ser fiel ao ar.
+const CONFIG = JSON.parse(readFileSync(fileURLToPath(new URL('../vercel.json', import.meta.url)), 'utf8'));
+const HEADERS = CONFIG.headers
+  .filter((r) => r.source === '/(.*)')
+  .flatMap((r) => r.headers.map((h) => [h.key, h.value]));
 
 createServer(async (req, res) => {
   const url = new URL(req.url, 'http://localhost');
   let path = decodeURIComponent(url.pathname);
-  for (const r of rules) if (matches(r.pattern, path)) for (const [k, v] of r.headers) res.setHeader(k, v);
+  for (const [k, v] of HEADERS) res.setHeader(k, v);
 
   // Não serve arquivos de configuração nem ocultos (como a Cloudflare).
   if (/(^|\/)[._]/.test(path)) return send(res, 404, 'Não encontrado');
@@ -67,7 +48,7 @@ createServer(async (req, res) => {
   } catch {
     send(res, 404, 'Não encontrado');
   }
-}).listen(PORT, () => console.log(`IdleMulti site em http://localhost:${PORT} (cabeçalhos de public/_headers aplicados)`));
+}).listen(PORT, () => console.log(`IdleMulti site em http://localhost:${PORT} (cabeçalhos do vercel.json aplicados)`));
 
 function send(res, code, msg) {
   res.writeHead(code, { 'Content-Type': 'text/plain; charset=utf-8' });
