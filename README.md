@@ -28,6 +28,9 @@ O projeto `idlemulti` na Vercel está ligado a este repositório: todo push na `
 
 Endereço atual: https://idlemulti.vercel.app
 
+### Endereço antigo (Cloudflare)
+O site já esteve em `https://idlemulti-site.geovaneleal80.workers.dev`, e esse endereço está embutido nas versões do app que já foram instaladas (links de Termos e Privacidade). Por isso `cloudflare-redirect/` mantém um Worker com o mesmo nome que só redireciona (301) para a Vercel, preservando caminho e query. Para republicá-lo: `cd cloudflare-redirect && npx wrangler deploy`. Só dá para desligá-lo quando o app novo (com o endereço da Vercel em `lib/legal.js`) for a versão da base de usuários.
+
 ## Ligar o botão de download
 Basta tornar público o repo `idle-multi-releases` e publicar a release (deixar de ser rascunho). O botão passa a funcionar sozinho, sem alterar o site.
 
